@@ -1,4 +1,4 @@
-package com.example.insightsfromsensordata;
+package com.example.ContextFromSensors;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.insightsfromsensordata;
+package com.example.ContextFromSensors;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SensorList extends AppCompatActivity {
 
-    private SensorManager mSensorManager;
+    private SensorManager SensorManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +20,13 @@ public class SensorList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_sensor_list);
 
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        List<Sensor> sensorList  = mSensorManager.getSensorList(Sensor.TYPE_ALL);
+        SensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
+        // Sensor manager is used to list every sensor that is in the device
+        List<Sensor> sensorList  = SensorManager.getSensorList(Sensor.TYPE_ALL);
+
+        // Iterate over the list and get the name of each sensor
         StringBuilder sensorText = new StringBuilder();
-
         for (Sensor currentSensor : sensorList ) {
             sensorText.append(currentSensor.getName()).append(
                     System.getProperty("line.separator"));

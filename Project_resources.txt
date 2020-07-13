@@ -1,2 +1,10 @@
 Working with sensor data
 https://google-developer-training.github.io/android-developer-advanced-course-practicals/unit-1-expand-the-user-experience/lesson-3-sensors/3-1-p-working-with-sensor-data/3-1-p-working-with-sensor-data.html
+
+SensorEvent ACCELEROMETER
+https://developer.android.com/reference/android/hardware/SensorEvent
+
+Audio amplitude detector for Android.
+https://gist.github.com/pardom-zz/9644274
+https://android.developreference.com/article/16185455/How+to+analyze+the+value+returned+by+the+mediaRecorder.getMaxAmplitude()+in+Android
+https://audiology-web.s3.amazonaws.com/migrated/NoiseChart_Poster-%208.5x11.pdf_5399b289427535.32730330.pdf

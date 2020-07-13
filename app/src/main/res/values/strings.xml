@@ -1,13 +1,21 @@
 <resources>
-    <string name="app_name">Insights from Sensor Data</string>
+    <string name="app_name">Context from Sensors</string>
     <string name="latest_activity">Latest activity</string>
     <string name="current_activity">Current activity</string>
-    <string name="textview">TextView</string>
-    <string name="add" />
-    <string name="reset" />
-    <string name="about" />
-    <string name="exit" />
     <string name="error_no_sensor">No sensor</string>
-    <string name="label_light">Light Sensor: %1$.2f</string> />
-    <string name="label_proximity">Proximity Sensor: %1$.2f</string> />
+    <string name="label_light">Light Sensor Value: %1s lx.</string>
+    <string name="label_speed">User Speed: %1s.</string>
+    <string name="label_sound">Environment sound: %1s dB</string>
+    <string name="label_user_light_context">Your location is in %1s.</string>
+    <string name="label_user_speed_context">You are %1s.</string>
+    <string name="label_user_sound_context">The sound level of your environment is %1s.</string>
+    <string name="tab_context">Your context</string>
+    <string name="tab_sensor_values">Sensor values</string>
+    <string name="title_context">User Context</string>
+    <string name="events">Events</string>
+    <string name="contexts">Contexts</string>
+    <string name="label_velocity">Velocity: /s X-axis: %1s m/s2  Y-axis: %2s m/s2 Z-axis: %3s m/s2.</string>
+    <string name="label_event_fall">Detected device falls this session: %1s.</string>
+    <string name="label_event_steps">Number of steps taken this session: %1s.</string>
+    />
 </resources>

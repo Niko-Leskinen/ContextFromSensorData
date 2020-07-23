@@ -1,2 +1,2 @@
-rootProject.name='Insights from Sensor Data'
+rootProject.name='Context from Sensor Data'
 include ':app'

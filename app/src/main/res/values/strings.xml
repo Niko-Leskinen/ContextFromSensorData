@@ -2,20 +2,38 @@
     <string name="app_name">Context from Sensors</string>
     <string name="latest_activity">Latest activity</string>
     <string name="current_activity">Current activity</string>
-    <string name="error_no_sensor">No sensor</string>
-    <string name="label_light">Light Sensor Value: %1s lx.</string>
-    <string name="label_speed">User Speed: %1s.</string>
-    <string name="label_sound">Environment sound: %1s dB</string>
+    <string name="error_no_sensor">No sensor available or permission granted</string>
+    <string name="error_no_permission">No permission granted</string>
+
+    <string name="label_light">Light Sensor Value:\n%1s lx.</string>
+    <string name="label_speed">User Speed:\n%1s.</string>
+    <string name="label_sound">Environment sound:\n%1s dB</string>
+    <string name="label_velocity">Velocity:\nX-axis: %1s m/s2\nY-axis: %2s m/s2\nZ-axis: %3s m/s2.</string>
+
     <string name="label_user_light_context">Your location is in %1s.</string>
     <string name="label_user_speed_context">You are %1s.</string>
     <string name="label_user_sound_context">The sound level of your environment is %1s.</string>
+
     <string name="tab_context">Your context</string>
     <string name="tab_sensor_values">Sensor values</string>
     <string name="title_context">User Context</string>
     <string name="events">Events</string>
-    <string name="contexts">Contexts</string>
-    <string name="label_velocity">Velocity: /s X-axis: %1s m/s2  Y-axis: %2s m/s2 Z-axis: %3s m/s2.</string>
-    <string name="label_event_fall">Detected device falls this session: %1s.</string>
-    <string name="label_event_steps">Number of steps taken this session: %1s.</string>
-    />
+    <string name="contexts">Context</string>
+    <string name="label_values_title">Values</string>
+
+    <string name="label_event_fall">Detected device falls this session:\n%1s.</string>
+    <string name="label_event_steps">Number of steps taken this session:\n%1s.</string>
+
+    <string name="label_popup_light">Light context goes from pitch black to direct sunlight.</string>
+    <string name="label_popup_speed">Speed context goes from being stationary to being in a motored vehicle.\nWorks best outdoors where GPS connection is good.</string>
+    <string name="label_popup_sound">Sound context goes from faint (db under 20 db) to painful and dangerous (db > 120 db).</string>
+    <string name="label_popup_fall">The amount of device falls when the application has been open and on foreground.</string>
+    <string name="label_popup_steps">The amount of steps taken when the application has been open and on foreground.\nThis will NOT work unless the device is placed in the pocket.</string>
+    <string name="label_popup_sensor_light">This value is in lux.</string>
+    <string name="label_popup_sensor_speed">This value is in metres per second and also in kilometers per hour.</string>
+    <string name="label_popup_sensor_sound">This value is in decibel.</string>
+    <string name="label_popup_sensor_velocity">This value is in 3-dimensional vector.</string>
+
+    <string name="view_sensors">View sensors</string>
+    <string name="exit">Exit</string>
 </resources>

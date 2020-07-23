@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:actionBarNavMode="list"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/colorPrimaryDark"
+        app:tabTextColor="@color/colorPrimary">
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tab_context" />
 
         <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tab_sensor_values" />
 
@@ -32,9 +35,9 @@
         android:id="@+id/context_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:divider="?android:listDivider"
-        android:dividerPadding="0dp"
-        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:divider="@drawable/divider"
+        android:orientation="horizontal"
         android:showDividers="middle"
         android:soundEffectsEnabled="false"
         android:visibility="visible"
@@ -48,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
+            android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:visibility="visible">
 
@@ -57,34 +61,41 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="@string/contexts"
-                android:textSize="24sp" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/title" />
 
             <TextView
                 android:id="@+id/label_user_light_context"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:text="@string/label_user_light_context" />
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:drawableEnd="@android:drawable/ic_menu_info_details"
+                android:text="@string/label_user_light_context"
+                android:textColor="@color/colorAccent"
+                app:drawableTint="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/label_sound_context"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:text="@string/label_user_sound_context" />
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:drawableEnd="@android:drawable/ic_menu_info_details"
+                android:text="@string/label_user_sound_context"
+                android:textColor="@color/colorAccent"
+                app:drawableTint="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/label_user_speed_context"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
-                android:text="@string/label_user_speed_context" />
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:drawableEnd="@android:drawable/ic_menu_info_details"
+                android:text="@string/label_user_speed_context"
+                android:textColor="@color/colorAccent"
+                app:drawableTint="@color/colorPrimaryDark" />
 
         </LinearLayout>
 
@@ -93,6 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
+            android:background="@color/colorPrimary"
             android:orientation="vertical"
             android:visibility="visible">
 
@@ -103,19 +115,31 @@
                 android:gravity="center_horizontal"
                 android:text="@string/events"
                 android:textAllCaps="false"
-                android:textSize="24sp" />
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/title" />
 
             <TextView
                 android:id="@+id/label_event_fall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_event_fall" />
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:drawableEnd="@android:drawable/ic_menu_info_details"
+                android:text="@string/label_event_fall"
+                android:textColor="@color/colorAccent"
+                app:drawableTint="@color/colorPrimaryDark" />
 
             <TextView
                 android:id="@+id/label_event_steps"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_event_steps" />
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:drawableEnd="@android:drawable/ic_menu_info_details"
+                android:text="@string/label_event_steps"
+                android:textColor="@color/colorAccent"
+                android:textIsSelectable="false"
+                app:drawableTint="@color/colorPrimaryDark" />
 
         </LinearLayout>
 
@@ -124,53 +148,67 @@
     <LinearLayout
         android:id="@+id/sensor_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
         <TextView
-            android:id="@+id/label_light"
-            android:layout_width="wrap_content"
+            android:id="@+id/label_values_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/label_light" />
+            android:gravity="center_horizontal"
+            android:text="@string/label_values_title"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/title" />
+
+        <TextView
+            android:id="@+id/label_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:drawableEnd="@android:drawable/ic_menu_info_details"
+            android:text="@string/label_light"
+            android:textColor="@color/colorAccent"
+            app:drawableTint="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/label_speed"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/label_speed" />
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:drawableEnd="@android:drawable/ic_menu_info_details"
+            android:text="@string/label_speed"
+            android:textColor="@color/colorAccent"
+            app:drawableTint="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/label_sound"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/label_sound" />
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:drawableEnd="@android:drawable/ic_menu_info_details"
+            android:text="@string/label_sound"
+            android:textColor="@color/colorAccent"
+            app:drawableTint="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/label_velocity"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/label_velocity" />
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:drawableEnd="@android:drawable/ic_menu_info_details"
+            android:text="@string/label_velocity"
+            android:textColor="@color/colorAccent"
+            app:drawableTint="@color/colorPrimaryDark" />
 
     </LinearLayout>
 

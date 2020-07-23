@@ -18,6 +18,7 @@
             android:id="@+id/sensor_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(placeholder)"/>
+            android:text="(placeholder)"
+            android:textColor="@color/colorAccent" />
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

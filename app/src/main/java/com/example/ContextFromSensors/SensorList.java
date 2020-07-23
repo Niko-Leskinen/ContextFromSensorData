@@ -37,7 +37,7 @@ public class SensorList extends AppCompatActivity {
     // Close this activity when user taps arrow in action bar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        finish();
+        this.finish();
         return false;
     }
 }

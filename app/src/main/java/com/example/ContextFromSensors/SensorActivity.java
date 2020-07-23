@@ -1,21 +1,14 @@
 package com.example.ContextFromSensors;
 
-import android.hardware.Sensor;
 import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
 
 public class SensorActivity  {
 
-    // Sensor manager is a system service that is used to access the sensors in the device
-    private SensorManager sensorManager;
-
-    // Sensors
-    private Sensor SensorLight;
-    private Sensor SensorAccelerometer;
-
+    private static String initial_sensor_status = "{INITIALIZING}";
     // Stored variables
-    static String speed_action = null;
-    static String sound = null;
+    static String speed_context = initial_sensor_status;
+    static String sound_context = initial_sensor_status;
+    static String light_context = initial_sensor_status;
     static int falls = 0;
     static int steps = 0;
 
@@ -26,28 +19,32 @@ public class SensorActivity  {
      */
 
     static String light_context(int value) {
-        String context = "Value not in range";
+        light_context = "Value not in range";
         // do nothing
         if (value <= 10) {
-            context = "pitch black";
+            light_context = "pitch black";
         } else if (value <= 50) {
-            context = "very dark";
+            light_context = "very dark";
         } else if (value <= 200) {
-            context = "dark indoors";
+            light_context = "dark indoors";
         } else if (value <= 400) {
-            context = "dim indoors";
+            light_context = "dim indoors";
         } else if (value <= 1000) {
-            context = "normal indoors";
+            light_context = "normal indoors";
         } else if (value <= 5000) {
-            context = "bright indoors";
+            light_context = "bright indoors";
         } else if (value <= 10000) {
-            context = "dim outdoors";
+            light_context = "dim outdoors";
         } else if (value <= 30000) {
-            context = "cloudy outdoors";
+            light_context = "cloudy outdoors";
         } else if (value <= 100000) {
-            context = "direct sunlight";
+            light_context = "direct sunlight";
         }
-        return context;
+        return light_context;
+    }
+
+    static String getLight() {
+        return light_context;
     }
 
     /*
@@ -87,37 +84,43 @@ public class SensorActivity  {
     static String speed_context(int speed) {
 
         if (speed > 0 && speed < 2) {
-            speed_action = "walking";
+            speed_context = "walking";
         } else if (speed >= 2 && speed < 6) {
-            speed_action = "running";
+            speed_context = "running";
         } else if (speed >= 6 && speed < 8) {
-            speed_action = "riding a bike";
+            speed_context = "riding a bike";
         } else if (speed > 8) {
-            speed_action = "in a motored vehicle";
+            speed_context = "in a motored vehicle";
         } else {
-            speed_action = "standing still, if you are not, you might have a weak GPS connection";
+            speed_context = "standing still, if you are not, you might have a weak GPS connection";
         }
-        return speed_action;
+        return speed_context;
+    }
+    static String getSpeed() {
+        return speed_context;
     }
 
     static String sound_context (int db) {
 
         if (db <= 20) {
-            sound = "faint";
+            sound_context = "faint";
         } else if (db < 20 && db <= 40) {
-            sound = "soft";
+            sound_context = "soft";
         } else if (db < 40 && db <= 60) {
-            sound = "moderate";
+            sound_context = "moderate";
         } else if (db < 60 && db <= 80) {
-            sound = "loud";
+            sound_context = "loud";
         } else if (db < 80 && db <= 110) {
-            sound = "very loud";
+            sound_context = "very loud";
         } else if (db < 110 && db <= 120) {
-            sound = "uncomfortable";
+            sound_context = "uncomfortable";
         } else {
-            sound = "painful & dangerous";
+            sound_context = "painful & dangerous";
         }
-        return sound;
+        return sound_context;
+    }
+    static String getSound() {
+        return sound_context;
     }
 
     static int fall_event(double X, double Y, double Z) {
@@ -127,9 +130,15 @@ public class SensorActivity  {
         }
         return falls;
     }
+    static int getFalls() {
+        return falls;
+    }
 
     static int step_event() {
         steps++;
+        return steps;
+    }
+    static int getSteps() {
         return steps;
     }
 }

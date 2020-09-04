@@ -48,35 +48,6 @@ public class SensorActivity  {
     }
 
     /*
-    X, Y, Z axis and the linear acceleration in each axis is in event values as m/s^2
-     */
-    String velocity_context(SensorEvent event) {
-        float linear_accelerationX = event.values[0];
-        float linear_accelerationY = event.values[1];
-        float linear_accelerationZ = event.values[2];
-
-        // If any axis is negative (decreasing velocity), make it positive
-        if (linear_accelerationY < 0) {
-            linear_accelerationY = linear_accelerationY*-1;
-        } else if (linear_accelerationX < 0) {
-            linear_accelerationX = linear_accelerationX*-1;
-        } else if (linear_accelerationZ < 0) {
-            linear_accelerationZ = linear_accelerationZ*-1;
-        }
-
-        if (linear_accelerationY >= 0.5 && linear_accelerationY < 1.5 ||
-                linear_accelerationX >= 0.5 && linear_accelerationX < 1.5 ||
-                linear_accelerationZ >= 0.5 && linear_accelerationZ < 1.5) {
-        } else if (linear_accelerationY >= 1.5 && linear_accelerationY < 6 ||
-                linear_accelerationX >= 1.5 && linear_accelerationX < 6 ||
-                linear_accelerationZ >= 1.5 && linear_accelerationZ < 6) {
-        } else {
-        }
-
-        return "y";
-        // String.valueOf(linear_accelerationY)
-    }
-    /*
     Here the speed in m/s is turned into information of users movement, such as walking or being in
     a motored vehicle by using the following list
     https://en.wikipedia.org/wiki/Orders_of_magnitude_(speed)

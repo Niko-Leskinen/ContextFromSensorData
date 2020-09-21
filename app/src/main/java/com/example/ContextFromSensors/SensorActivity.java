@@ -75,15 +75,15 @@ public class SensorActivity  {
 
         if (db <= 20) {
             sound_context = "faint";
-        } else if (db < 20 && db <= 40) {
+        } else if (db > 20 && db <= 40) {
             sound_context = "soft";
-        } else if (db < 40 && db <= 60) {
+        } else if (db > 40 && db <= 60) {
             sound_context = "moderate";
-        } else if (db < 60 && db <= 80) {
+        } else if (db > 60 && db <= 80) {
             sound_context = "loud";
-        } else if (db < 80 && db <= 110) {
+        } else if (db > 80 && db <= 110) {
             sound_context = "very loud";
-        } else if (db < 110 && db <= 120) {
+        } else if (db > 110 && db <= 120) {
             sound_context = "uncomfortable";
         } else {
             sound_context = "painful & dangerous";
@@ -95,8 +95,8 @@ public class SensorActivity  {
     }
 
     static int fall_event(double X, double Y, double Z) {
-        double loAccelerationReader = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2) + Math.pow(Z, 2));
-        if (loAccelerationReader > 0.3d && loAccelerationReader < 0.5d) {
+        double acceleration = Math.sqrt(Math.pow(X, 2) + Math.pow(Y, 2) + Math.pow(Z, 2));
+        if (acceleration > 0.3d && acceleration < 0.5d) {
             falls++;
         }
         return falls;

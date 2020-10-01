@@ -52,7 +52,7 @@ public class SensorActivity  {
     a motored vehicle by using the following list
     https://en.wikipedia.org/wiki/Orders_of_magnitude_(speed)
      */
-    static String speed_context(int speed) {
+    static String speed_context(float speed) {
 
         if (speed > 0 && speed < 2) {
             speed_context = "walking";
@@ -75,15 +75,15 @@ public class SensorActivity  {
 
         if (db <= 20) {
             sound_context = "faint";
-        } else if (db > 20 && db <= 40) {
+        } else if (db <= 40) {
             sound_context = "soft";
-        } else if (db > 40 && db <= 60) {
+        } else if (db <= 60) {
             sound_context = "moderate";
-        } else if (db > 60 && db <= 80) {
+        } else if (db <= 80) {
             sound_context = "loud";
-        } else if (db > 80 && db <= 110) {
+        } else if (db <= 110) {
             sound_context = "very loud";
-        } else if (db > 110 && db <= 120) {
+        } else if (db <= 120) {
             sound_context = "uncomfortable";
         } else {
             sound_context = "painful & dangerous";

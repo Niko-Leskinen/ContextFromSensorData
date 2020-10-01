@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     static long lastTime = 0;
     static long interval = 250; // milliseconds
 
-    private int speedM;
-    private int speedKM;
+    private float speedM;
+    private float speedKM;
 
     private PopupWindow myPopUpWindow;
     private TextView TextDescription;
@@ -417,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     // Method used to get user speed when location changes.
     @Override
     public void onLocationChanged(Location location) {
-        speedM = (int) location.getSpeed();
+        speedM = location.getSpeed();
         speedKM = speedM * (60*60)/1000;
         TextSensorSpeed.setText((getResources().getString(R.string.label_speed, String.valueOf(speedM + " m/s or " + speedKM + " km/h"))));
         TextUserSpeedContext.setText((getResources().getString(R.string.label_user_speed_context, SensorActivity.speed_context(speedM))));
